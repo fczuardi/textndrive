@@ -24,6 +24,11 @@ Migrei para este novo por questoes de refactoring (queria testar o redux).
 Pretendo estudar um pouco a API do [Telegram][telegram] para ver se faço parte
 da mecanica do jogo ser via [bot de chat][telegrambot] no celular.
 
+Quero também aproveitar o fim de semana e este sprint para me dar a chance de
+experimentar o framework baseado em [Flux][flux] e
+programacao funcional [Redux][redux].
+
+
 O backend será [node][nodejs] e o front-end provavelmente [Phaser][phaser].
 
 - [koa][koa] (webserver)
@@ -54,10 +59,12 @@ da cidade.
 Tenho vontade de fazer uma interface bem retrô e ter na tela de abertura o tradicional "insert coin" para inserir créditos no jogo. Se der tempo quero que estas moedas sejam [Dogecoin][dogecoin]
 
 [dogecoin]:http://dogecoin.com/
+[flux]:https://facebook.github.io/flux/
 [koa]: http://koajs.com/
 [nodejs]:https://nodejs.org/
 [pacman]:https://en.wikipedia.org/wiki/Pac-Man
 [phaser]:http://phaser.io/
+[redux]:http://rackt.github.io/redux/
 [rallyx]:http://www.arcadetotal.com/?p=1056
 [telegram]:https://telegram.org
 [telegrambot]:https://core.telegram.org/bots/api
