@@ -14,9 +14,9 @@ let store = createStore(game);
 console.log(store.getState());
 
 // Every time the state changes, log it
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-);
+//let unsubscribe = store.subscribe(() =>
+//   console.log(store.getState())
+//);
 
 // Start creating 3 games
 let tokens = ['', '', ''];

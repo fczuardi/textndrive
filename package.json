@@ -4,16 +4,31 @@
   "description": "Text & Drive",
   "main": "./src/index.js",
   "scripts": {
-    "test": "babel-node ./src/index.js"
+    "test": "babel-node ./src/index.js",
+    "clean": "rm -rf ./dist",
+    "css": "cp -f ./node_modules/normalize.css/normalize.css ./dist/www/lib/css/.",
+    "html": "babel-node ./bin/page.js > ./dist/www/index.html",
+    "js": "npm run js:polyfill",
+    "build": "npm run clean && npm run css && npm run js && npm run html",
+    "postclean": "mkdir -p ./dist/www/lib/js ./dist/www/lib/css",
+    "js:polyfill": "npm run js:polyfill:es5-shim && npm run js:polyfill:es5-sham && npm run js:polyfill:console",
+    "js:polyfill:es5-shim": "cp node_modules/es5-shim/es5-shim.js ./dist/www/lib/js/.",
+    "js:polyfill:es5-sham": "cp node_modules/es5-shim/es5-sham.js ./dist/www/lib/js/.",
+    "js:polyfill:console": "cp node_modules/console-polyfill/index.js ./dist/www/lib/js/console-polyfill.js"
   },
   "author": "Fabricio C Zuardi",
   "license": "AGPL-3.0",
   "devDependencies": {
     "babel": "^5.8.21",
+    "console-polyfill": "^0.2.1",
+    "es5-shim": "^4.1.10",
+    "js-beautify": "^1.5.10",
     "koa": "^0.21.0",
     "koa-router": "^5.1.2",
+    "koa-static": "^1.4.9",
     "lodash": "^3.10.1",
     "node-telegram-bot-api": "^0.12.1",
+    "normalize.css": "^3.0.3",
     "react": "^0.14.0-beta1",
     "react-dom": "^0.14.0-beta1",
     "redux": "^1.0.1"

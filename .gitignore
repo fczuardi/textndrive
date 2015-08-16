@@ -1,3 +1,4 @@
 .zedstate
 node_modules
 conf/telegram.js
+dist/

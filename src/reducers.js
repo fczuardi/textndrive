@@ -42,7 +42,6 @@ function games(state = {}, action){
             };
             return s;
         case END_GAME:
-            console.log('end game', action);
             delete s[findKey(s, {player: action.userId})];
             return s;
         default:
