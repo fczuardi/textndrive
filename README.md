@@ -25,6 +25,39 @@ Migrei para este novo por questoes de refactoring (queria testar o redux).
 - Para dirigir o carro: setas direcionais.
 - Para conversar com a central/enviar comandos para o chat bot: teclado (na app Telegram, que precisa estar instalada)
 
+### Justificativa
+
+Comunicação é tudo, a popularizacao da internet e dos dispositivos moveis nos
+permite hoje comunicarmos com pessoas e servicos de qualquer lugar do globo.
+Esta quebra de paradigma vem emancipando os cidadaos na medida que desafia e
+quebra modelos de negocios e monopolios antes garantidos pela necessidade de
+intermediários.
+
+A ubiquidade da comunicacao nos deixa mais proximos das utopias de um mundo
+realmente globalizado, sem fronteiras e sem intervencoes burocraticas/estatais
+desnecessarias. Napster, bittorrent, airbnb, uber, craigslist, bitcoin,
+openstreetmap, youtube, twitter, whatsapp sao só alguns exemplos de como a
+inovacao pode melhorar nossas vidas.
+
+…E, desagradar velhas industrias/modelos/concentracoes de poder.
+
+Foi mais ou menos dai que surgiu a justificativa do jogo, aproveitar o
+spotlight gerado por brigas entre motoristas particulares do aplicativo Uber
+contra taxistas e fazer um jogo que levante também o debate :)
+
+Mas o principal, eu queria brincar de fazer bot de chat e um joguinho ao estilo
+dos clássicos RallyX (o arcade do carrinho que solta fumaça) e GTA2 (uma jogo
+muito divertido que marcou minha adolescencia). Queria me divertir!
+
+### Fotos
+
+Veja album completo em http://imgur.com/a/Ac78b
+
+![Imgur](http://i.imgur.com/kdqvCXil.png)
+
+![Imgur](http://i.imgur.com/MFj7mWwl.png)
+
+![Imgur](http://i.imgur.com/ijiTxHLl.png)
 
 ## História / Meu plano
 
