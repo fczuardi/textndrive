@@ -21,7 +21,7 @@ let options = {
         '//cdn.muicss.com/mui-0.1.21/js/mui.min.js',
         '$comment=es-mui',
         '//cdn.jsdelivr.net/phaser/2.4.2/phaser.js',
-        '$comment=phaser',
+        '$comment=phaser-engine',
         './js/vendors.js',
         '$comment=game',
         './js/game.js',
