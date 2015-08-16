@@ -10,7 +10,7 @@ function create() {
     var style = { font: "65px Roboto", fill: "#FFFF00", align: "center" };
 
     browserGame.physics.enable(taxiDriver, Phaser.Physics.ARCADE);
-    taxiDriver.body.velocity.x=150;
+    taxiDriver.body.velocity.x=10;
 }
 
 function update() {
