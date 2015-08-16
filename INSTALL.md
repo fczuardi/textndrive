@@ -24,12 +24,20 @@ Crie um novo bot com:
 Copie o arquivo ```/conf/telegram.example.js``` retirando o ```.example``` do nome do arquivo.
 
     $ cp conf/telegram.example.js conf/telegram.js
-    
+
 Edite o arquivo recem criado e substitua ```YOUR_API_TOKEN_HERE``` pelo token que o Botfather lhe forneceu.
 
-### Testar
+### Gerar a build
 
     $ npm test
+
+ou
+
+    $ npm run build
+
+### Subir o bot e os servidores
+
+    $ npm start
 
 
 [botfather]:https://telegram.me/botfather
