@@ -3,8 +3,10 @@ import keys from 'lodash/object/keys';
 
 import game from './reducers';
 import { generateNextToken } from './helpers/token';
-import { createGame } from './actions';
+import { createGame, startGame, endGame } from './actions';
 import webServer from './api';
+import bot from './bot';
+
 
 let store = createStore(game);
 
@@ -24,27 +26,26 @@ tokens = tokens.map( () =>
 tokens.forEach( (token) => {
     store.dispatch(createGame(token));
 });
-// store.dispatch(startGame(tokens[1], {
-//             id: 'fcz11111',
-//             firstName: 'Fabricio',
-//             lastName: 'Zuardi',
-//             username: 'fczuardi'
-//         }
-// ));
-// let player = {
-//     id: 'jd22222',
-//     firstName: 'John',
-//     lastName: 'Doe',
-//     username: 'johndoe'
-// };
-// store.dispatch(startGame(tokens[2], player));
+store.dispatch(startGame(tokens[1], {
+            id: 'fcz11111',
+            firstName: 'Fabricio',
+            lastName: 'Zuardi',
+            username: 'fczuardi'
+        }
+));
+let player = {
+    id: 'jd22222',
+    firstName: 'John',
+    lastName: 'Doe',
+    username: 'johndoe'
+};
+store.dispatch(startGame(tokens[2], player));
 
-// let action = endGame(tokens[2]);
-// console.log('action', action);
-// store.dispatch(endGame(tokens[2]) );
+store.dispatch(endGame('jd22222') );
 
 
 webServer.start(store);
+bot.start(store);
 
 // Stop listening to state updates
-unsubscribe();
+// unsubscribe();

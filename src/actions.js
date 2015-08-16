@@ -17,9 +17,9 @@ export function startGame(gameId, player) {
         player
     };
 }
-export function endGame(id) {
+export function endGame(userId) {
     return {
         type: END_GAME,
-        id
+        userId
     };
 }

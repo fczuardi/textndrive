@@ -1,6 +1,10 @@
 import Koa from 'koa';
 import Router from 'koa-router';
+import keys from 'lodash/object/keys';
+
 import serverConfig from '../conf/server';
+import { generateNextToken } from './helpers/token';
+import { createGame } from './actions';
 
 let app = Koa();
 let router = Router();
@@ -14,7 +18,10 @@ const indexHTML = `
 //routes
 router.get(serverConfig.api.newGame, function *(next){
     console.log('New game route');
-    this.body = store.getState().unusedTokens[0];
+    let storeState = store.getState(),
+        token = generateNextToken(keys(storeState.games));
+    store.dispatch(createGame(token));
+    this.body = token;
     yield next;
 });
 

@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import without from 'lodash/array/without';
 import merge from 'lodash/object/merge';
+import findKey from 'lodash/object/findKey';
 
 import {
     CREATE_GAME,
@@ -42,7 +43,7 @@ function games(state = {}, action){
             return s;
         case END_GAME:
             console.log('end game', action);
-            delete s[action.id];
+            delete s[findKey(s, {player: action.userId})];
             return s;
         default:
             return state;
