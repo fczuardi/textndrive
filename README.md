@@ -17,7 +17,16 @@ _Tensão e adrenalina nas ruas da metréopole._
 O desenvolvimento deste jogo comecou em outro repositorio: https://github.com/fczuardi/semcomp15
 Migrei para este novo por questoes de refactoring (queria testar o redux).
 
-## Meu plano
+
+### Requisitos
+É necessário ter a app de chat Telegram instalada em algum dispositivo (smartphone ou no proprio computador) para jogar este jogo. O download é gratuito e pode ser feito em https://telegram.org/
+
+### Comandos:
+- Para dirigir o carro: setas direcionais.
+- Para conversar com a central/enviar comandos para o chat bot: teclado (na app Telegram, que precisa estar instalada)
+
+
+## História / Meu plano
 
 ### Tecnologia
 
@@ -25,13 +34,14 @@ Pretendo estudar um pouco a API do [Telegram][telegram] para ver se faço parte
 da mecanica do jogo ser via [bot de chat][telegrambot] no celular.
 
 Quero também aproveitar o fim de semana e este sprint para me dar a chance de
-experimentar o framework baseado em [Flux][flux] e
-programacao funcional [Redux][redux].
+experimentar o framework [Redux][redux] que é baseado nos paradigmas [Flux][flux]
+e programacao funcional. A parte do front end da app em si (pgina html e
+componentes de interface) usarei [React][react].
 
+O backend será [node][nodejs], usando o [koa][koa] para servir as páginas
+estáticas e a API, exposta publicamente com o reverse proxy [nginx][nginx].
 
-O backend será [node][nodejs] e o front-end provavelmente [Phaser][phaser].
-
-- [koa][koa] (webserver)
+A engine de jogo/sprites será a [Phaser][phaser].
 
 ## Interface/gameplay
 
@@ -66,9 +76,11 @@ Tenho vontade de fazer uma interface bem retrô e ter na tela de abertura o trad
 [flux]:https://facebook.github.io/flux/
 [installdoc]:https://github.com/fczuardi/textndrive/blob/master/INSTALL.md
 [koa]: http://koajs.com/
+[nginx]:http://nginx.org/en/
 [nodejs]:https://nodejs.org/
 [pacman]:https://en.wikipedia.org/wiki/Pac-Man
 [phaser]:http://phaser.io/
+[react]:http://facebook.github.io/react/
 [redux]:http://rackt.github.io/redux/
 [rallyx]:http://www.arcadetotal.com/?p=1056
 [telegram]:https://telegram.org

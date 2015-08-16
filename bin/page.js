@@ -1,7 +1,8 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { DOM, createElement } from 'react';
-import render from '../src/templates/page.jsx';
 import {html} from 'js-beautify';
+
+import Page from '../src/components/page';
 
 let options = {
     lang: 'pt',
@@ -18,11 +19,6 @@ let options = {
     ]
 };
 
-class Page {
-    render() {
-        return render(this.props);
-    }
-}
 
 console.log(
 html(
