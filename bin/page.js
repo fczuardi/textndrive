@@ -16,6 +16,10 @@ let options = {
         './lib/js/es5-sham.js',
         './lib/js/console-polyfill.js',
         '$comment=es-polyfills',
+        './js/vendors.js',
+        '$comment=game',
+        './js/game.js',
+        '$comment=game',
     ]
 };
 

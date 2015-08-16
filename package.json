@@ -9,9 +9,13 @@
     "clean": "rm -rf ./dist",
     "css": "cp -f ./node_modules/normalize.css/normalize.css ./dist/www/lib/css/.",
     "html": "babel-node ./bin/page.js > ./dist/www/index.html",
-    "js": "npm run js:polyfill",
+    "js": "npm run js:bundle & npm run js:polyfill",
     "build": "npm run clean && npm run css && npm run js && npm run html",
-    "postclean": "mkdir -p ./dist/www/lib/js ./dist/www/lib/css",
+    "postclean": "mkdir -p ./dist/www/js ./dist/www/lib/js ./dist/www/lib/css",
+    "js:bundle": "npm run js:bundle:app && npm run js:bundle:vendors",
+    "js:bundle:app": "browserify --no-bundle-external -e ./src/browser.js -o ./dist/www/js/game.js -t babelify",
+    "js:bundle:vendors": "browserify -r react -r react-dom -e ./src/browser.js -o ./dist/www/js/vendors.js -t babelify",
+    "dev:watch": "watchify --no-bundle-external -e ./src/browser.js -o ./dist/www/js/game.js -t babelify",
     "js:polyfill": "npm run js:polyfill:es5-shim && npm run js:polyfill:es5-sham && npm run js:polyfill:console",
     "js:polyfill:es5-shim": "cp node_modules/es5-shim/es5-shim.js ./dist/www/lib/js/.",
     "js:polyfill:es5-sham": "cp node_modules/es5-shim/es5-sham.js ./dist/www/lib/js/.",
@@ -21,6 +25,8 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "babel": "^5.8.21",
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.1",
     "console-polyfill": "^0.2.1",
     "es5-shim": "^4.1.10",
     "js-beautify": "^1.5.10",
@@ -32,7 +38,8 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.0-beta1",
     "react-dom": "^0.14.0-beta1",
-    "redux": "^1.0.1"
+    "redux": "^1.0.1",
+    "watchify": "^3.3.1"
   },
   "dependencies": {
     "react-redux": "^0.8.2"
