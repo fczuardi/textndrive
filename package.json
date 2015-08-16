@@ -7,11 +7,11 @@
     "start": "babel-node ./src/index.js",
     "test": "npm run build",
     "clean": "rm -rf ./dist",
-    "css": "cp -f ./node_modules/normalize.css/normalize.css ./dist/www/lib/css/.",
     "html": "babel-node ./bin/page.js > ./dist/www/index.html",
     "js": "npm run js:bundle & npm run js:polyfill",
+    "css": "cp -f ./src/css/main.css ./dist/www/css/.",
     "build": "npm run clean && npm run css && npm run js && npm run html",
-    "postclean": "mkdir -p ./dist/www/js ./dist/www/lib/js ./dist/www/lib/css",
+    "postclean": "mkdir -p ./dist/www/js ./dist/www/css ./dist/www/lib/js ./dist/www/lib/css",
     "js:bundle": "npm run js:bundle:app && npm run js:bundle:vendors",
     "js:bundle:app": "browserify --no-bundle-external -e ./src/browser.js -o ./dist/www/js/game.js -t babelify",
     "js:bundle:vendors": "browserify -r redux -r 'lodash/object/keys' -r 'lodash/array/without' -r 'lodash/object/merge' -r 'lodash/object/findKey' -r react -r react-dom -r react-redux -o ./dist/www/js/vendors.js -t babelify",
@@ -19,7 +19,8 @@
     "js:polyfill": "npm run js:polyfill:es5-shim && npm run js:polyfill:es5-sham && npm run js:polyfill:console",
     "js:polyfill:es5-shim": "cp node_modules/es5-shim/es5-shim.js ./dist/www/lib/js/.",
     "js:polyfill:es5-sham": "cp node_modules/es5-shim/es5-sham.js ./dist/www/lib/js/.",
-    "js:polyfill:console": "cp node_modules/console-polyfill/index.js ./dist/www/lib/js/console-polyfill.js"
+    "js:polyfill:console": "cp node_modules/console-polyfill/index.js ./dist/www/lib/js/console-polyfill.js",
+    "css:vendors": "cp -f ./node_modules/normalize.css/normalize.css ./dist/www/lib/css/."
   },
   "author": "Fabricio C Zuardi",
   "license": "AGPL-3.0",

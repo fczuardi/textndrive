@@ -9,13 +9,17 @@ let options = {
     charSet: 'utf-8',
     title: 'Text & Drive',
     stylesheets: [
-        './lib/css/normalize.css',
+        '//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700',
+        '//cdn.muicss.com/mui-0.1.21/css/mui.min.css',
+        './css/main.css'
     ],
     scripts: [
         './lib/js/es5-shim.js',
         './lib/js/es5-sham.js',
         './lib/js/console-polyfill.js',
         '$comment=es-polyfills',
+        '//cdn.muicss.com/mui-0.1.21/js/mui.min.js',
+        '$comment=es-mui',
         './js/vendors.js',
         '$comment=game',
         './js/game.js',
