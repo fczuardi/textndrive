@@ -4,7 +4,8 @@
   "description": "Text & Drive",
   "main": "./src/index.js",
   "scripts": {
-    "test": "babel-node ./src/index.js",
+    "start": "babel-node ./src/index.js",
+    "test": "npm run build",
     "clean": "rm -rf ./dist",
     "css": "cp -f ./node_modules/normalize.css/normalize.css ./dist/www/lib/css/.",
     "html": "babel-node ./bin/page.js > ./dist/www/index.html",

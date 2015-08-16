@@ -54,12 +54,17 @@ da cidade.
   - Internet Explorer 10+ (Protocol Version 13)
   - Safari 6+ (Protocol Version 13)
 
+### Contribua
+
+Instrucoes de como baixar e rodar o código se encontram em [INSTALL.md][installdoc]
+
 ## Se der tempo
 
 Tenho vontade de fazer uma interface bem retrô e ter na tela de abertura o tradicional "insert coin" para inserir créditos no jogo. Se der tempo quero que estas moedas sejam [Dogecoin][dogecoin]
 
 [dogecoin]:http://dogecoin.com/
 [flux]:https://facebook.github.io/flux/
+[installdoc]:https://github.com/fczuardi/textndrive/blob/master/INSTALL.md
 [koa]: http://koajs.com/
 [nodejs]:https://nodejs.org/
 [pacman]:https://en.wikipedia.org/wiki/Pac-Man
