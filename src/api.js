@@ -29,7 +29,7 @@ router.get(serverConfig.api.newGame, function *(next){
     let storeState = store.getState(),
         token = generateNextToken(keys(storeState.games));
     store.dispatch(createGame(token));
-    this.body = token;
+    this.body = { token };
     yield next;
 });
 

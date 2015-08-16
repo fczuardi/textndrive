@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { startGame } from '../actions';
+// import { startGame } from '../actions';
 import render from '../templates/game.jsx';
 import clientGame from '../browser.game.js';
 
@@ -10,18 +10,19 @@ class Game {
         clientGame.start('game-panel');
     }
     render() {
-        const { dispatch } = this.props;
+        // const { dispatch } = this.props;
         let actions = {
             startButtonClick: () => {
-                dispatch(startGame(
-                    '123.456',
-                    {
-                        id: 'fcz11111',
-                        firstName: 'Fabricio',
-                        lastName: 'Zuardi',
-                        username: 'fczuardi'
-                    }
-                ));
+                window.open('http://textndrive.nulo.com.br:3033/new');
+                // dispatch(startGame(
+                //     '123.456',
+                //     {
+                //         id: 'fcz11111',
+                //         firstName: 'Fabricio',
+                //         lastName: 'Zuardi',
+                //         username: 'fczuardi'
+                //     }
+                // ));
             }
         };
         return render(this.props, actions);
