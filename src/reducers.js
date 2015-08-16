@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import without from 'lodash/array/without';
 import merge from 'lodash/object/merge';
 
 import {
@@ -8,9 +9,21 @@ import {
 } from './actions';
 
 const gameReducer = combineReducers({
+    unusedTokens,
     games,
     players
 });
+
+function unusedTokens(state = [], action) {
+    switch(action.type){
+        case CREATE_GAME:
+            return [...state, action.id];
+        case START_GAME:
+            return without(state, action.gameId);
+        default:
+            return state;
+    }
+}
 
 function games(state = {}, action){
     let s = merge({}, state);

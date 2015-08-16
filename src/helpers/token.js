@@ -2,7 +2,7 @@
 export function generateToken() {
     let len = 3;
     let str = Math.random().toString();
-    return str.substring(2, 2 + len) + ' ' + str.substring(2 + len, 2 + 2 * len);
+    return str.substring(2, 2 + len) + '-' + str.substring(2 + len, 2 + 2 * len);
 }
 
 //given a list of existing tokens, returns a new unique token

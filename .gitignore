@@ -1,2 +1,3 @@
-node_modules
 .zedstate
+node_modules
+conf/telegram.js

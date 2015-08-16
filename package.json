@@ -10,6 +10,8 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "babel": "^5.8.21",
+    "koa": "^0.21.0",
+    "koa-router": "^5.1.2",
     "lodash": "^3.10.1",
     "redux": "^1.0.1"
   }

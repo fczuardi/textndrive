@@ -1,4 +1,8 @@
 export default {
+    unusedTokens: [
+        '123.321',
+        '234.654'
+    ]
     games: {
         '123.321': {
             running:false,
