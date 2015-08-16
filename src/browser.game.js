@@ -7,10 +7,11 @@ function preload() {
 
 function create() {
     let taxiDriver = browserGame.add.sprite(0, 0, 'taxiDriver');
-    var style = { font: "65px Roboto", fill: "#FFFF00", align: "center" };
 
     browserGame.physics.enable(taxiDriver, Phaser.Physics.ARCADE);
     taxiDriver.body.velocity.x=10;
+
+    browserGame.stage.backgroundColor = 0xffffff;
 }
 
 function update() {
