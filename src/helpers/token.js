@@ -8,5 +8,5 @@ export function generateToken() {
 //given a list of existing tokens, returns a new unique token
 export function generateNextToken(list) {
     let token = generateToken();
-    return list.includes(token) ? generateNextToken(list) : token;
+    return (list.indexOf(token) !== -1) ? generateNextToken(list) : token;
 }

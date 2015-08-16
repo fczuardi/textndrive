@@ -36,6 +36,10 @@ function games(state = {}, action){
             };
             return s;
         case START_GAME:
+            if (s[action.gameId] === undefined){
+                console.log('tried to start an invalid game');
+                return state; //can only start games that exist
+            }
             s[action.gameId] = {
                 running: true,
                 player: action.player.id

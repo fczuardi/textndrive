@@ -14,7 +14,7 @@
     "postclean": "mkdir -p ./dist/www/js ./dist/www/lib/js ./dist/www/lib/css",
     "js:bundle": "npm run js:bundle:app && npm run js:bundle:vendors",
     "js:bundle:app": "browserify --no-bundle-external -e ./src/browser.js -o ./dist/www/js/game.js -t babelify",
-    "js:bundle:vendors": "browserify -r react -r react-dom -e ./src/browser.js -o ./dist/www/js/vendors.js -t babelify",
+    "js:bundle:vendors": "browserify -r redux -r 'lodash/object/keys' -r 'lodash/array/without' -r 'lodash/object/merge' -r 'lodash/object/findKey' -r react -r react-dom -r react-redux -o ./dist/www/js/vendors.js -t babelify",
     "dev:watch": "watchify --no-bundle-external -e ./src/browser.js -o ./dist/www/js/game.js -t babelify",
     "js:polyfill": "npm run js:polyfill:es5-shim && npm run js:polyfill:es5-sham && npm run js:polyfill:console",
     "js:polyfill:es5-shim": "cp node_modules/es5-shim/es5-shim.js ./dist/www/lib/js/.",
@@ -38,6 +38,7 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.0-beta1",
     "react-dom": "^0.14.0-beta1",
+    "react-redux": "^0.8.2",
     "redux": "^1.0.1",
     "watchify": "^3.3.1"
   },
