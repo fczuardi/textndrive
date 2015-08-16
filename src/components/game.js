@@ -2,8 +2,13 @@ import { connect } from 'react-redux';
 
 import { startGame } from '../actions';
 import render from '../templates/game.jsx';
+import clientGame from '../browser.game.js';
 
 class Game {
+    componentDidMount() {
+        console.log('game DOM ready');
+        clientGame.start('game-panel');
+    }
     render() {
         const { dispatch } = this.props;
         let actions = {
