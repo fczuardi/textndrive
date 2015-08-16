@@ -1,0 +1,16 @@
+{
+  "name": "textndrive",
+  "version": "0.1.0",
+  "description": "Text & Drive",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "babel-node ./src/index.js"
+  },
+  "author": "Fabricio C Zuardi",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "lodash": "^3.10.1",
+    "redux": "^1.0.1"
+  }
+}
