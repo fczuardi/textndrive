@@ -11,7 +11,7 @@ function create() {
     browserGame.physics.enable(taxiDriver, Phaser.Physics.ARCADE);
     taxiDriver.body.velocity.x=10;
 
-    browserGame.stage.backgroundColor = 0xffffff;
+//    browserGame.stage.backgroundColor = 0xffffff;
 }
 
 function update() {
