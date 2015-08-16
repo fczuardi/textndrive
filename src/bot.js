@@ -1,6 +1,7 @@
 import telegramBot from 'node-telegram-bot-api';
 import indexOf from 'lodash/array/indexOf';
 import keys from 'lodash/object/keys';
+import merge from 'lodash/object/merge';
 
 import telegramConfig from '../conf/telegram';
 import messages from '../locales/pt/messages';
@@ -39,7 +40,8 @@ let checkTextCommands = (msg) => {
             console.log('player still connected');
             bot.sendMessage(msg.chat.id, messages.start.alreadyPlaying);
         } else if (isGameAvailable){
-            store.dispatch(startGame(text, msg.from) );
+            console.log('player ---', msg.from)
+            store.dispatch(startGame(text, merge(msg.from, {chatId: msg.chat.id})) );
             bot.sendMessage(msg.chat.id, messages.start.activated);
         } else {
             console.log('game was already activated');
@@ -66,6 +68,23 @@ let start = (storeRef) => {
                 checkTextCommands(msg);
         }
     });
+    let mapInterval = setInterval(() => {
+        let storeState = store.getState();
+        for (var i in storeState.players){
+            let player = storeState.players[i];
+            if (player.chatId === undefined){
+                continue;
+            }
+            console.log('broadcast new customer coordinate', player);
+            let msg = '@' + player.username + ' cliente chamando em: (' + 
+                      Math.round(Math.random()*10) + ',' + 
+                      Math.round(Math.random()*10) + ')';
+            let chatId = player.chatId;
+            console.log(chatId, msg);
+            bot.sendMessage(chatId, msg);
+        }
+    }, Math.random() * 20 * 1000);
+    console.log('mapInterval running');
 };
 
 export default {
