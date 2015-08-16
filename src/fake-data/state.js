@@ -2,7 +2,7 @@ export default {
     unusedTokens: [
         '123.321',
         '234.654'
-    ]
+    ],
     games: {
         '123.321': {
             running:false,
@@ -23,14 +23,16 @@ export default {
             firstName: 'Fabricio',
             lastName: 'Zuardi',
             username: 'fczuardi',
-            currentGame: '123.456'
+            currentGame: '123.456',
+            credits: 10
         },
         'jd22222': {
             id: 'jd22222',
             firstName: 'John',
             lastName: 'Doe',
             username: 'johndoe',
-            currentGame: null
+            currentGame: null,
+            credits: 10
         }
     }
 

@@ -6,7 +6,8 @@ import findKey from 'lodash/object/findKey';
 import {
     CREATE_GAME,
     START_GAME,
-    END_GAME
+    END_GAME,
+    DECREASE_CREDIT
 } from './actions';
 
 const gameReducer = combineReducers({
@@ -57,7 +58,12 @@ function players(state = {}, action){
     let s = merge({}, state);
     switch(action.type){
         case START_GAME:
-            s[action.player.id] = action.player;
+            s[action.player.id] = merge(
+                {}, action.player, {credits:10}
+            );
+            return s;
+        case DECREASE_CREDIT:
+            s[action.playerId].credits -= 1;
             return s;
         default:
             return state;
