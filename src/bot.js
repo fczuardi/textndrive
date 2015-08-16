@@ -83,7 +83,7 @@ let start = (storeRef) => {
             console.log(chatId, msg);
             bot.sendMessage(chatId, msg);
         }
-    }, Math.random() * 20 * 1000);
+    }, 10 * 1000);
     console.log('mapInterval running');
 };
 

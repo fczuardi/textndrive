@@ -16,6 +16,9 @@ export default (p, a) =>
             className=''
             id='game-panel'
         >
+        <p>Adicione o bot 
+        <a href='https://telegram.me/semcomp15_bot'>@semcomp15_bot</a>
+        para receber informacoes da central</p>
         </div>
         <button
             onClick={a.startButtonClick}
